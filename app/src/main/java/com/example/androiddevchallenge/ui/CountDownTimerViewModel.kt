@@ -21,7 +21,6 @@ import java.util.Locale
  *  @description: description
  *  @date: 2021/3/5 11:48
  */
-
 class CountDownTimerViewModel : ViewModel() {
 
     private var job: Job? = null

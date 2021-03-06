@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-                val isDarkTheme = remember { mutableStateOf(false) }
-                MyTheme(darkTheme = isDarkTheme.value) {
-                    MyApp(isDarkTheme)
+            val isDarkTheme = remember { mutableStateOf(false) }
+            MyTheme(darkTheme = isDarkTheme.value) {
+                MyApp(isDarkTheme)
             }
         }
     }

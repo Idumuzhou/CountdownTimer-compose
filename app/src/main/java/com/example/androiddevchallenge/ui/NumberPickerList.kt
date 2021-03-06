@@ -26,7 +26,6 @@ import kotlinx.coroutines.launch
  *  @description: description
  *  @date: 2021/3/5 11:50
  */
-
 @Composable
 fun NumberPickerList(numbers: List<Int>, selectedItem: (Int) -> Unit) {
     val listState = rememberLazyListState(0, 0)
@@ -39,14 +38,18 @@ fun NumberPickerList(numbers: List<Int>, selectedItem: (Int) -> Unit) {
 
     val textSizeState = remember { mutableStateOf(22.sp) }
 
-    Box(modifier = Modifier.width(40.dp).height(96.dp)) {
+    Box(modifier = Modifier
+        .width(40.dp)
+        .height(96.dp)) {
         LazyColumn(
             state = listState
         ) {
             itemsIndexed(items = numbers) { index, item ->
                 if (index == 0 || index == numbers.size - 1) {
                     Spacer(
-                        modifier = Modifier.fillMaxWidth().height(32.dp),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(32.dp),
                     )
                 } else {
                     if (firstVisibleItemIndex.value != item) {
@@ -58,7 +61,9 @@ fun NumberPickerList(numbers: List<Int>, selectedItem: (Int) -> Unit) {
                     Text(
                         text = formatTime(value = item),
                         fontSize = textSizeState.value,
-                        modifier = Modifier.height(32.dp).fillMaxWidth(),
+                        modifier = Modifier
+                            .height(32.dp)
+                            .fillMaxWidth(),
                         textAlign = TextAlign.Center
                     )
                 }
