@@ -57,9 +57,7 @@ fun MyApp(isDarkTheme: MutableState<Boolean>) {
 @Composable
 fun LightPreview() {
     MyTheme {
-        MyTheme {
-            MyApp(mutableStateOf(false))
-        }
+        MyApp(mutableStateOf(false))
     }
 }
 
